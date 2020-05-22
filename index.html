@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+
+        <title>Model Checker</title>
+    </head>
+    <body>
+        <main>
+            <div id="hero">
+                <h1>Finite Automata Model Verification</h1>
+                <div id="header-underline"></div>
+            </div>
+            <div class="description">
+                <p>
+                    The <b>Finite Automata Model Verification</b> tool enables users
+                    to compare their <i>JFLAP</i> designed Finite Automata against
+                    the instructor's verified solutions for accuracy and acceptance.
+                    Simply select an appropriate
+                    <span><a href="http://www.jflap.org">JFLAP</a></span>
+                    file, upload, and compare against any of the verified selected
+                    solutions provided.
+                </p>
+            </div>
+            <div class="wrapper">
+                <section>
+                    <h2>Select Finite Automata</h2>
+                    <div class="underline"></div>
+                    <p>
+                        Select the <b>JFLAP</b> file to upload that you
+                        would like to check.
+                    </p>
+                    <!-- form(s) -->
+                    <div class="form-sections">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                        </form>
+                    </div>
+                </section>
+                <section>
+                    <h2>Check Finite Automata</h2>
+                    <div class="underline"></div>
+                    <p>
+                        With the selected Finite Automata uploaded, select a
+                        <b>solution</b> to compare it against below and click
+                        "Check My Answer" below.
+                    </p>
+                    <div class="form-sections">
+                        <div id="div-check">
+                            <form>
+                                <select id="solutions" name="solutions">
+                                    <option value="100-1-spec.jff">Solution 1</option>
+                                    <option value="100-2-spec.jff">Solution 2</option>
+                                    <option value="100-3-spec.jff">Solution 3</option>
+                                </select>
+                                <input id="check-button" type="submit"
+                                       value="Check My Answer" name="submit">
+                            </form>
+                        </div>
+                    </div>
+                    <p id="upload-status"></p>
+                </section>
+                <section>
+                    <h2>Verification Results</h2>
+                    <div class="underline"></div>
+                    <p id="verification-status"></p>
+                    <p>
+                        The results of the supplied Finite Automata and the
+                        verified solution Finite Automata are displayed below.
+                    </p>
+                    <table>
+                        <tr>
+                            <th>Finite Automata</th>
+                            <th>Results</th>
+                        </tr>
+                        <tr>
+                            <td>Solution Finite Automata</td>
+                            <td id="spc-string"></td>
+                        </tr>
+                        <tr>
+                            <td>Supplied Finite Automata</td>
+                            <td id="sys-string"></td>
+                        </tr>
+                        <tr>
+                            <td>Final Result</td>
+                            <td id="final-result"></td>
+                        </tr>
+                    </table>
+                    <p>
+                        <b>Note</b>: The results indicate the sequence of
+                        transitions that causes the Finite Automata to fail.
+                        i.e. If the Supplied Finite Automata generated a string
+                        'aba', then the transition 'aba' is not recognized by the
+                        Solution Finite Automata and vice versa.
+                    </p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <h3>About</h3>
+                <ul>
+                    <li><b>Created By</b>: Jacob Anderson</li>
+                    <li><b>Contact</b>:
+                        <a href="mailto:jwande18@asu.edu">jwande18@asu.edu</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3>Versions</h3>
+                <ul>
+                    <li><b>Website Last Modified</b>: 05/22/2020</li>
+                    <li><b>Model Checking Tool Version</b>: v1.0</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Recognitions</h3>
+                <ul>
+                    <li><b>Director(s)</b>: Georgios Fainekos</li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- script(s) --!>
+        <script type="text/javascript" src="upload.js"></script>
+    </body>
+</html>
